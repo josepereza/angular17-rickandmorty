@@ -1,0 +1,20 @@
+<div class="container cards" >
+   @if (rickiService.characters()){
+
+     @for (item of rickiService.characters()?.results ; track item.id){
+        <div class="card border-secondary mb-3">
+            <div class="card-header">{{item.name}}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{item.type}}</h5>
+              <img src={{item.image}} width="100%" alt="">
+            </div>
+       
+        </div>
+    } @empty {
+        <li> There are no items. </li>
+      }
+   }
+   
+
+
+</div>
