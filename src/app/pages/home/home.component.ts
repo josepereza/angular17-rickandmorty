@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RickandmortyService } from '../../services/rickandmorty.service';
 import { Rickandmorty } from '../../interfaces/rickandmorty';
 import { toSignal} from '@angular/core/rxjs-interop'
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

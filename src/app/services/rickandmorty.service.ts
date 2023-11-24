@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Signal, inject, signal } from '@angular/core';
 import { Result, Rickandmorty } from '../interfaces/rickandmorty';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,9 @@ console.log('service data',data)
     })
   
     
+  }
+
+  getCharacter(id:number):Observable<Result>{
+    return this.httpClient.get<Result>(`https://rickandmortyapi.com/api/character/${id}`)
   }
 }

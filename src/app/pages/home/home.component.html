@@ -2,13 +2,13 @@
    @if (rickiService.characters()){
 
      @for (item of rickiService.characters()?.results ; track item.id){
-        <div class="card border-secondary mb-3">
+        <div class="card border-secondary mb-3" style="background-color: rgb(58, 53, 53) !important;">
             <div class="card-header">{{item.name}}</div>
-            <div class="card-body">
+            <div class="card-body" >
               <h5 class="card-title">{{item.type}}</h5>
-              <img src={{item.image}} width="100%" alt="">
+              <img src={{item.image}} width="100%"  alt="">
             </div>
-       
+            <a class="btn btn-lg btn-primary" style="width: 100%; text-align: center; margin: auto; padding: 10px;"  [routerLink]="['/details', item.id]">Learn More</a>
         </div>
     } @empty {
         <li> There are no items. </li>
