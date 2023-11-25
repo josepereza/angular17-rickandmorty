@@ -23,9 +23,17 @@ ngOnInit(): void {
   debounceTime(350),
   distinctUntilChanged(),
  ).subscribe(data=>{
+  if (!data){
+    data=''
+  }
   this.rickyService.getCharacters(data)
   console.log('navbar',data)
   //this.getAll(data)
  })
 
-}}
+}
+reset(){
+  this.inputSearch.setValue(' ')
+  this.rickyService.getCharacters(' ')
+}
+}

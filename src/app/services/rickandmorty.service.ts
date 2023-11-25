@@ -9,15 +9,19 @@ import { Observable, map } from 'rxjs';
 })
 export class RickandmortyService {
   characters=signal<any>('');
-
+  search=signal<any>('')
   constructor() {
 
 
    }
   httpClient=inject(HttpClient)
 
-  getCharacters(search:string=''){
-    this.httpClient.get<any>(`https://rickandmortyapi.com/api/character/?name=${search}`)
+  getCharacters(search?:string){
+    if (search){
+          this.search.set(search)
+
+    }
+    this.httpClient.get<any>(`https://rickandmortyapi.com/api/character/?name=${this.search()}`)
     .subscribe(data=>{
 this.characters.set(data)
 console.log('service chara',this.characters())
