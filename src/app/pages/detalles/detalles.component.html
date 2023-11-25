@@ -1,4 +1,36 @@
-<p>detalles works!</p>
-{{character() | json }}
-<h2>el hombre es  {{character()?.name}}</h2>
-{{character()!.name}}
+
+<div class="container text-center">
+    <h2>{{character()?.name}}</h2>
+    <div class="row gy-4">
+      <div class="col-12 col-md-8  mx-auto">
+        <div class="card" style="width: 80%;">
+            <div class="card-body">
+            <img src="{{character()?.image}}" width="100%" alt="">
+            </div>
+          </div>
+      </div>
+      <div class="col-12  col-md-4">
+        <div class="card" style="width:100%;">
+            <div class="card-body">
+              <h5 class="card-title">{{character()?.name}}</h5>
+             <div class="d-flex flex-column mb-3  align-items-start">
+
+                 <span class="card-text">Status : {{character()?.status}}</span>
+              <br>
+              <span class="card-text">Species : {{character()?.species}}</span>
+              <br>
+              <span class="card-text">Type : {{character()?.type}}</span>
+              <br>
+              <span class="card-text">Gender : {{character()?.gender}}</span>
+              <br>
+             
+             </div>
+             
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <a [routerLink]="['/home']" class="btn btn-primary btn-lg mt-3 px-3 w-100"> Back</a> 
+      </div>
+    </div>
+  </div>

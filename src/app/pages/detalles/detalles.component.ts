@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { RickandmortyService } from '../../services/rickandmorty.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Rickandmorty,Result } from '../../interfaces/rickandmorty';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './detalles.component.html',
   styleUrl: './detalles.component.css'
 })
