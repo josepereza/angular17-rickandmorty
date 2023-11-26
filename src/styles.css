@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 ::view-transition-new(container1){
     transform: scale(0.2);
-   transition-duration: 3.5s;
+   transition-duration: 1.5s;
+   animation-duration: 1s;
 }
 
 ::view-transition-old(container1){
     transform: rotate(0.5turn);
-    transition-duration: 0.5s;
+    transition-duration: 1.5s;
+    animation-duration: 1s;
 }
 
 
