@@ -1,7 +1,7 @@
-<div class="container cards" >
+<div class="container cards"  style = "view-transition-name:container1">
    @if (rickiService.characters()){
 
-     @for (item of rickiService.characters()?.results ; track item.id){
+     @for (item of rickiService.characters() ; track item.id){
         <div class="card border-secondary mb-3" style="background-color: rgb(58, 53, 53) !important;">
             <div class="card-header">{{item.name}}</div>
             <div class="card-body" >

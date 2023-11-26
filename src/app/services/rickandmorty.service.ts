@@ -21,9 +21,9 @@ export class RickandmortyService {
           this.search.set(search)
 
     }
-    this.httpClient.get<any>(`https://rickandmortyapi.com/api/character/?name=${this.search()}`)
+    this.httpClient.get<Rickandmorty>(`https://rickandmortyapi.com/api/character/?name=${this.search()}`)
     .subscribe(data=>{
-this.characters.set(data)
+this.characters.set(data.results)
 console.log('service chara',this.characters())
 console.log('service data',data)
 
